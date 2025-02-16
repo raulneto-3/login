@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Dashboard</h2>
+<p>Welcome, {{ current_user.username }}!</p>
+<a href="{{ url_for('main.logout') }}">Logout</a>
+{% if current_user.is_admin %}
+<a href="{{ url_for('main.users') }}">View All Users</a>
+{% endif %}
+{% endblock %}
